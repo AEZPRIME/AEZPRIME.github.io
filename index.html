@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LABTECA · Biblioteca de Laboratorio Clínico</title>
+<meta name="description" content="Biblioteca digital de laboratorio clínico: parasitología, hematología, uroanálisis, cultivos, anatomía, bioquímica, insertos, microbiología e inmunología.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="spaceBg" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============== HEADER ============== -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a href="#inicio" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 2.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M9.6 2.5v6.4L4.9 16.6a2.3 2.3 0 0 0 1.98 3.45h10.24a2.3 2.3 0 0 0 1.98-3.45L14.4 8.9V2.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/><path class="brand-mark-fill" d="M7.3 14.2h9.4l1.4 2.4a2.3 2.3 0 0 1-1.98 3.45H7.88A2.3 2.3 0 0 1 5.9 16.6z"/></svg>
+      </span>
+      LABTECA
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" data-spy="inicio">Inicio</a></li>
+        <li><a href="#categorias" data-spy="categorias">Categorías</a></li>
+        <li><a href="#catalogo" data-spy="catalogo">Catálogo</a></li>
+        <li><a href="#galeria" data-spy="galeria">Galería</a></li>
+        <li><a href="#acerca" data-spy="acerca">Acerca</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema claro/oscuro">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 14.7A8.5 8.5 0 1 1 9.3 3.8a7 7 0 0 0 10.9 10.9Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.1"/><path d="M12 2.6v3M12 18.4v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.6 12h3M18.4 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="header-progress" id="headerProgress" aria-hidden="true"></div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="reveal" data-reveal>
+      <span class="eyebrow">Biblioteca digital · Laboratorio clínico</span>
+      <h1>Tu estantería de <em>laboratorio</em>, organizada como una muestra.</h1>
+      <p class="lead">Manuales, atlas y guías de parasitología, hematología, uroanálisis, cultivos, anatomía, bioquímica, insertos, microbiología e inmunología — listos para consultar, leer en línea o descargar.</p>
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.4" cy="10.4" r="6.4"/><line x1="10.4" y1="7.3" x2="10.4" y2="13.5"/><line x1="7.3" y1="10.4" x2="13.5" y2="10.4"/><line x1="15.1" y1="15.1" x2="19.8" y2="19.8"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar por título o autor...">
+        <span class="search-kbd">/</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn btn-primary">
+          <span>Explorar catálogo</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#categorias" class="btn btn-ghost">Ver categorías</a>
+      </div>
+    </div>
+
+    <!-- Gradilla decorativa: además sirve de acceso rápido por categoría -->
+    <div class="rack reveal" data-reveal data-reveal-delay="120" aria-hidden="false">
+      <a href="#" class="tube tube--2" data-cat="parasitologia"><span class="tube-liquid" style="background:var(--cat-parasitologia)"></span><span class="tube-cap" style="background:var(--cat-parasitologia)"></span><span class="tube-label">PARA</span></a>
+      <a href="#" class="tube tube--4" data-cat="hematologia"><span class="tube-liquid" style="background:var(--cat-hematologia)"></span><span class="tube-cap" style="background:var(--cat-hematologia)"></span><span class="tube-label">HEMA</span></a>
+      <a href="#" class="tube tube--1" data-cat="uroanalisis"><span class="tube-liquid" style="background:var(--cat-uroanalisis)"></span><span class="tube-cap" style="background:var(--cat-uroanalisis)"></span><span class="tube-label">URO</span></a>
+      <a href="#" class="tube tube--6" data-cat="cultivos"><span class="tube-liquid" style="background:var(--cat-cultivos)"></span><span class="tube-cap" style="background:var(--cat-cultivos)"></span><span class="tube-label">CULT</span></a>
+      <a href="#" class="tube tube--3" data-cat="anatomia"><span class="tube-liquid" style="background:var(--cat-anatomia)"></span><span class="tube-cap" style="background:var(--cat-anatomia)"></span><span class="tube-label">ANAT</span></a>
+      <a href="#" class="tube tube--5" data-cat="bioquimica"><span class="tube-liquid" style="background:var(--cat-bioquimica)"></span><span class="tube-cap" style="background:var(--cat-bioquimica)"></span><span class="tube-label">BIOQ</span></a>
+      <a href="#" class="tube tube--7" data-cat="insertos"><span class="tube-liquid" style="background:var(--cat-insertos)"></span><span class="tube-cap" style="background:var(--cat-insertos)"></span><span class="tube-label">INST</span></a>
+      <a href="#" class="tube tube--5" data-cat="microbiologia"><span class="tube-liquid" style="background:var(--cat-microbiologia)"></span><span class="tube-cap" style="background:var(--cat-microbiologia)"></span><span class="tube-label">MICRO</span></a>
+      <a href="#" class="tube tube--3" data-cat="inmunologia"><span class="tube-liquid" style="background:var(--cat-inmunologia)"></span><span class="tube-cap" style="background:var(--cat-inmunologia)"></span><span class="tube-label">INMU</span></a>
+      <a href="#" class="tube tube--6" data-cat="general"><span class="tube-liquid" style="background:var(--cat-general)"></span><span class="tube-cap" style="background:var(--cat-general)"></span><span class="tube-label">GEN</span></a>
+    </div>
+  </div>
+  <svg class="hero-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 32 Q 360 0 720 30 T 1440 28 V60 H0 Z"></path></svg>
+</section>
+
+<!-- ============== ACERCA ============== -->
+<section class="about" id="acerca">
+  <div class="container">
+    <div class="about-card reveal" data-reveal>
+      <p class="lead-text" style="color:var(--ink); font-size:1.05rem;">LABTECA reúne en un solo lugar el material de consulta de uso diario en el laboratorio clínico: bibliografía técnica organizada por área, con acceso inmediato para leer en línea o descargar, sin depender de carpetas sueltas ni enlaces dispersos.</p>
+      <div class="about-stat"><div class="num" id="statBooks" data-count="0">0</div><div class="label">Títulos en catálogo</div></div>
+      <div class="about-stat"><div class="num" id="statCats" data-count="0">0</div><div class="label">Áreas temáticas</div></div>
+      <div class="about-stat"><div class="num num-infinity">∞</div><div class="label">Lecturas y descargas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CATEGORÍAS / FILTROS ============== -->
+<section class="filters-section" id="categorias">
+  <div class="container">
+    <h2 class="section-title reveal" data-reveal>
+      <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6.2 7.3v6.4L10.2 21v-8.7z"/></svg>
+      Categorías
+    </h2>
+    <p class="section-sub reveal" data-reveal>Filtra el catálogo por área temática.</p>
+    <div class="filters" id="filters"></div>
+    <div class="filters status-filters" id="statusFilters">
+      <button class="chip is-active" data-status="all"><span class="dot" style="background:var(--ink)"></span>Todos los estados</button>
+      <button class="chip" data-status="leyendo"><span class="dot" style="background:#D9A33E"></span>Leyendo</button>
+      <button class="chip" data-status="leido"><span class="dot" style="background:var(--accent)"></span>Leídos</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CATÁLOGO ============== -->
+<section class="catalog" id="catalogo">
+  <div class="container">
+    <div class="catalog-head reveal" data-reveal>
+      <h2 class="section-title" style="margin:0;">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.2C10.2 4.9 7.6 4.2 4.8 4.2v14.1c2.8 0 5.4.7 7.2 2 1.8-1.3 4.4-2 7.2-2V4.2c-2.8 0-5.4.7-7.2 2Z"/><path d="M12 6.2v14.1"/></svg>
+        Catálogo
+      </h2>
+      <span class="count-tag" id="countTag"></span>
+    </div>
+    <div class="progress-row reveal" data-reveal>
+      <div class="progress-bar" id="progressBar"><span id="progressBarFill"></span></div>
+      <span class="progress-tag" id="progressTag"></span>
+    </div>
+    <div class="grid" id="bookGrid"></div>
+  </div>
+</section>
+
+<!-- ============== GALERÍA ============== -->
+<section class="gallery-section" id="galeria">
+  <div class="container">
+    <div class="gallery-head reveal" data-reveal>
+      <div>
+        <h2 class="section-title" style="margin-bottom:4px;">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.6A1.6 1.6 0 0 1 5.6 7h1.9L8.7 5.3h6.6L16.5 7h1.9A1.6 1.6 0 0 1 20 8.6v9A1.6 1.6 0 0 1 18.4 19H5.6A1.6 1.6 0 0 1 4 17.6z"/><circle cx="12" cy="12.7" r="3.4"/></svg>
+          Imágenes de laboratorio
+        </h2>
+        <p style="margin-bottom:0;">Fotografías propias del espacio, equipos y procedimientos.</p>
+      </div>
+      <span class="count-tag" id="galleryCount"></span>
+    </div>
+    <div class="gallery-grid" id="galleryGrid" style="margin-top:18px;"></div>
+    <div class="gallery-pager" id="galleryPager">
+      <button class="icon-btn" id="galleryPrev" aria-label="Página anterior de fotos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17l-5-5 5-5"/></svg>
+      </button>
+      <span class="pager-label" id="galleryPageLabel">Página 1 / 1</span>
+      <button class="icon-btn" id="galleryNext" aria-label="Página siguiente de fotos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 17l5-5-5-5"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="#inicio" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 2.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M9.6 2.5v6.4L4.9 16.6a2.3 2.3 0 0 0 1.98 3.45h10.24a2.3 2.3 0 0 0 1.98-3.45L14.4 8.9V2.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/><path class="brand-mark-fill" d="M7.3 14.2h9.4l1.4 2.4a2.3 2.3 0 0 1-1.98 3.45H7.88A2.3 2.3 0 0 1 5.9 16.6z"/></svg>
+        </span>
+        LABTECA
+      </a>
+      <p class="foot-note">Biblioteca digital de laboratorio clínico. Material con fines de consulta y estudio.</p>
+    </div>
+    <small>© <span id="year"></span> LABTECA</small>
+  </div>
+</footer>
+
+<!-- ============== BOTÓN VOLVER ARRIBA ============== -->
+<button class="to-top" id="toTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V6"/><path d="M6.5 11.5L12 6l5.5 5.5"/></svg>
+</button>
+
+<!-- ============== MODAL LECTOR ============== -->
+<div class="reader-overlay" id="readerOverlay">
+  <div class="reader-panel" role="dialog" aria-modal="true" aria-label="Lector de documento">
+    <div class="reader-bar">
+      <div class="reader-titles">
+        <div class="t" id="readerTitle">Título</div>
+        <div class="c" id="readerCode">CODIGO</div>
+      </div>
+      <div class="reader-bar-actions">
+        <div class="zoom-group">
+          <button class="icon-btn" id="zoomOut" aria-label="Alejar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.3" cy="10.3" r="6.1"/><line x1="7.6" y1="10.3" x2="13" y2="10.3"/><line x1="15" y1="15" x2="19.5" y2="19.5"/></svg>
+          </button>
+          <span class="zoom-level" id="zoomLevel">100%</span>
+          <button class="icon-btn" id="zoomIn" aria-label="Acercar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.3" cy="10.3" r="6.1"/><line x1="10.3" y1="7.6" x2="10.3" y2="13"/><line x1="7.6" y1="10.3" x2="13" y2="10.3"/><line x1="15" y1="15" x2="19.5" y2="19.5"/></svg>
+          </button>
+        </div>
+        <a class="icon-btn" id="readerDownload" href="#" target="_blank" rel="noopener" aria-label="Descargar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v9.5"/><path d="M8 9.5l4 4 4-4"/><path d="M4.7 16.8v2a1.7 1.7 0 0 0 1.7 1.7h11.2a1.7 1.7 0 0 0 1.7-1.7v-2"/></svg>
+        </a>
+        <button class="icon-btn" id="readerClose" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="reader-body">
+      <div class="reader-frame-wrap" id="readerFrameWrap"></div>
+      <div class="reader-fallback" id="readerFallback">
+        <p>No se pudo cargar el documento.<br>Verifica que el archivo de Drive esté compartido como "Cualquiera con el enlace".</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============== LIGHTBOX DE GALERÍA ============== -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-stage">
+    <span class="lightbox-count" id="lightboxCount"></span>
+    <button class="icon-btn lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>
+    </button>
+    <button class="icon-btn lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17l-5-5 5-5"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="icon-btn lightbox-nav lightbox-next" id="lightboxNext" aria-label="Foto siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 17l5-5-5-5"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
